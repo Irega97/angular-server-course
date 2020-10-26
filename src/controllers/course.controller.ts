@@ -13,7 +13,12 @@ function getCourses(req:Request, res:Response):void {
 
 function postCourse (req: Request, res: Response): void {
     const course = new Course({
-        "nombre": req.body.nombre
+        "id": req.body.id,
+        "description": req.body.description,
+        "iconUrl": req.body.iconUrl,
+        "longDescription": req.body.longDescription,
+        "category": req.body.category,
+        "lessonsCount": req.body.lessonsCount
     });
     console.log(req.body);
     course.save().then((data) => {
